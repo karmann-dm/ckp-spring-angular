@@ -1,0 +1,16 @@
+<form [formGroup]="form">
+  <fieldset>
+    <legend>Вход</legend>
+    <div>
+      <label for="name">Адрес электронной почты</label>
+      <input id="name" name="email" formControlName="email">
+    </div>
+    <div>
+      <label for="password">Пароль</label>
+      <input id="password" name="password" formControlName="password" type="password">
+    </div>
+  </fieldset>
+  <div>
+    <button (click)="login()">Вход в систему</button>
+  </div>
+</form>
