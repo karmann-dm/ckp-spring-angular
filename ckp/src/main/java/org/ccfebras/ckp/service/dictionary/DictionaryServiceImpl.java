@@ -38,6 +38,13 @@ public class DictionaryServiceImpl implements DictionaryService {
     }
 
     @Override
+    public Organization updateOrganization(Long id, Organization organization) {
+        if(!organizationRepository.existsById(id))
+            throw new NotFoundException("Organization", "id", id);
+        return organizationRepository.save(organization);
+    }
+
+    @Override
     public List<Organization> findOrganizations() {
         return organizationRepository.findAll();
     }
