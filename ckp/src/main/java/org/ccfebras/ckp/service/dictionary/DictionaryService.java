@@ -18,4 +18,8 @@ public interface DictionaryService {
     Rank findRankById(Long id);
 
     Department findDepartmentById(Long id);
+    Department saveDepartment(Department department);
+    Department updateDepartment(Long id, Department department);
+    List<Department> findDepartments();
+    void deleteDepartment(Long id);
 }
