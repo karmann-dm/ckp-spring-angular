@@ -7,6 +7,7 @@ import java.util.List;
 public interface DictionaryService {
     Organization findOrganizationById(Long id);
     Organization saveOrganization(Organization organization);
+    Organization updateOrganization(Long id, Organization organization);
     List<Organization> findOrganizations();
     List<Organization> findOrganizationsByDepartmentId(Long departmentId);
     void deleteOrganization(Long id);

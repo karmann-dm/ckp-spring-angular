@@ -90,4 +90,29 @@ public class DictionaryServiceImpl implements DictionaryService {
                 .findById(id)
                 .orElseThrow(() -> new NotFoundException("Department", "id", id));
     }
+
+    @Override
+    public Department saveDepartment(Department department) {
+        return departmentRepository.save(department);
+    }
+
+    @Override
+    public Department updateDepartment(Long id, Department department) {
+        if(!organizationRepository.existsById(id))
+            throw new NotFoundException("Department", "id", id);
+        return departmentRepository.save(department);
+    }
+
+    @Override
+    public List<Department> findDepartments() {
+        return departmentRepository.findAll();
+    }
+
+    @Override
+    public void deleteDepartment(Long id) {
+        Department department = departmentRepository
+                .findById(id)
+                .orElseThrow(() -> new NotFoundException("Department", "id", id));
+        departmentRepository.delete(department);
+    }
 }
