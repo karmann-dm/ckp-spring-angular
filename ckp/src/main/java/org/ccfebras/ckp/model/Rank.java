@@ -19,7 +19,8 @@ import java.util.List;
 @Setter
 public class Rank extends UserDateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rank_seq")
+    @SequenceGenerator(name = "rank_seq", sequenceName = "ranks_id_seq")
     private Long id;
 
     @Column(name = "name")

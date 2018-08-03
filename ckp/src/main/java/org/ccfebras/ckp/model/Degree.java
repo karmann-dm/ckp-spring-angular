@@ -24,7 +24,8 @@ import java.util.List;
 @HistoryRoot(title = "Учёная степень")
 public class Degree extends UserDateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "degrees_seq")
+    @SequenceGenerator(name = "degrees_seq", sequenceName = "degrees_id_seq")
     private Long id;
 
     @Column(name = "name")

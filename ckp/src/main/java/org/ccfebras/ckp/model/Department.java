@@ -19,7 +19,8 @@ import java.util.List;
 @Setter
 public class Department extends UserDateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "department_seq")
+    @SequenceGenerator(name = "department_seq", sequenceName = "departments_id_seq")
     private Long id;
 
     @Column(name = "short_name")
