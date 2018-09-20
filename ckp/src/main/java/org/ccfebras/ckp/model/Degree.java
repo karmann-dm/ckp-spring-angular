@@ -1,5 +1,6 @@
 package org.ccfebras.ckp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,8 +25,7 @@ import java.util.List;
 @HistoryRoot(title = "Учёная степень")
 public class Degree extends UserDateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "degrees_seq")
-    @SequenceGenerator(name = "degrees_seq", sequenceName = "degrees_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
@@ -33,5 +33,6 @@ public class Degree extends UserDateAudit {
     private String name;
 
     @OneToMany(mappedBy = "degree")
+    @JsonIgnore
     private List<User> users;
 }

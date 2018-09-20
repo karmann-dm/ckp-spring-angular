@@ -1,0 +1,54 @@
+.portal__left-menu-container {
+  border-right: 1px solid grey;
+  height: 100%;
+  width: 15%;
+  position: fixed;
+  left: 0;
+  overflow-y: hidden;
+  box-shadow: 2px 0 2px grey;
+  background-color: whitesmoke;
+}
+
+.portal__content-container {
+  padding: 10px;
+  margin-left: 15%;
+  width: 100%;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 128px;
+  height: 128px;
+  left: 38%;
+  top: 35%;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 102px;
+  height: 102px;
+  margin: 6px;
+  border: 16px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: dodgerblue transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

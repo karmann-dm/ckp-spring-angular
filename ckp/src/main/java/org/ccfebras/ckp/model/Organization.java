@@ -20,8 +20,7 @@ import java.util.List;
 @Setter
 public class Organization extends UserDateAudit {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "organization_seq")
-    @SequenceGenerator(name = "organization_seq", sequenceName = "organizations_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "info")

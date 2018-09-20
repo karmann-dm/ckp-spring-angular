@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/portal/home">ИС ЦКП</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Заполнить заявку</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="userActionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Пользователь
+        </a>
+        <div class="dropdown-menu" aria-labelledby="userActionsDropdown">
+          <a class="dropdown-item" href="#">Мои заявки</a>
+          <a class="dropdown-item" href="#">Мои обращения</a>
+          <a class="dropdown-item" href="#">Мои действия</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Заполнить заявку</a>
+          <a class="dropdown-item" href="#">Помощь</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="adminActionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Администратор
+        </a>
+        <div class="dropdown-menu" aria-labelledby="adminActionsDropdown">
+          <a class="dropdown-item" href="#">Просмотр заявок</a>
+          <a class="dropdown-item" href="#">Просмотр пользователей</a>
+          <a class="dropdown-item" href="#">Сделать рассылку</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Отчёты</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid" style="display: flex; flex-direction: row;">
+  <div class="portal__left-menu-container">
+    <app-left-menu></app-left-menu>
+  </div>
+  <div class="portal__content-container">
+    <div id="loader" style="display: none; position: fixed; left: 15%; top: 55px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5)">
+      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
