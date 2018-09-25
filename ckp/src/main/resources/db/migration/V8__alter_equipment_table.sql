@@ -1,0 +1,1 @@
+alter table equipment rename to equipments;
