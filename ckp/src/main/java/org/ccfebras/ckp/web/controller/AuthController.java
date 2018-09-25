@@ -6,7 +6,10 @@ import org.ccfebras.ckp.model.RoleName;
 import org.ccfebras.ckp.model.User;
 import org.ccfebras.ckp.security.JwtTokenProvider;
 import org.ccfebras.ckp.service.auth.AuthService;
-import org.ccfebras.ckp.service.dictionary.DictionaryService;
+import org.ccfebras.ckp.service.dictionary.DegreeService;
+import org.ccfebras.ckp.service.dictionary.OrganizationService;
+import org.ccfebras.ckp.service.dictionary.PositionService;
+import org.ccfebras.ckp.service.dictionary.RankService;
 import org.ccfebras.ckp.web.dto.request.LoginRequest;
 import org.ccfebras.ckp.web.dto.request.SignUpRequest;
 import org.ccfebras.ckp.web.dto.response.ApiResponse;
@@ -39,7 +42,16 @@ public class AuthController {
     private AuthService authService;
 
     @Autowired
-    private DictionaryService dictionaryService;
+    private OrganizationService organizationService;
+
+    @Autowired
+    private DegreeService degreeService;
+
+    @Autowired
+    private PositionService positionService;
+
+    @Autowired
+    private RankService rankService;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -77,10 +89,10 @@ public class AuthController {
                 signUpRequest.getEmail(),
                 passwordEncoder.encode(signUpRequest.getPassword()),
                 signUpRequest.getPhone(),
-                dictionaryService.findOrganizationById(signUpRequest.getOrganizationId()),
-                dictionaryService.findDegreeById(signUpRequest.getDegreeId()),
-                dictionaryService.findPositionById(signUpRequest.getPositionId()),
-                dictionaryService.findRankById(signUpRequest.getRankId())
+                organizationService.getOrganizationById(signUpRequest.getOrganizationId()),
+                degreeService.getById(signUpRequest.getDegreeId()),
+                positionService.getById(signUpRequest.getPositionId()),
+                rankService.getById(signUpRequest.getRankId())
         );
 
         Role userRole = authService.findRoleByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User role not set."));

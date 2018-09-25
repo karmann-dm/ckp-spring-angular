@@ -22,12 +22,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
-@HistoryRoot(title = "Учёная степень")
 public class Degree extends UserDateAudit {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "name")
     @HistoryField(title = "Наименование")
     private String name;

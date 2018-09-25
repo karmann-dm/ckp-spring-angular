@@ -18,16 +18,16 @@ import java.time.Instant;
         value = {"createdAt", "updatedAt"},
         allowGetters = true
 )
-public abstract class DateAudit {
+public abstract class DateAudit extends AbstractEntity {
     @CreatedDate
     @Column(nullable = false, updatable = false)
     @Getter
     @Setter
-    private Instant createdAt;
+    protected Instant createdAt;
 
     @LastModifiedDate
     @Column(nullable = false)
     @Getter
     @Setter
-    private Instant updatedAt;
+    protected Instant updatedAt;
 }

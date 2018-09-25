@@ -19,10 +19,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Department extends UserDateAudit {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "short_name")
     private String shortName;
 

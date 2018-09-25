@@ -21,11 +21,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class User extends DateAudit {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-
     @Column(name = "first_name")
     private String firstName;
 

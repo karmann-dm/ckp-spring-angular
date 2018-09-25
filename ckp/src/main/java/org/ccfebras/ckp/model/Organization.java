@@ -19,10 +19,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Organization extends UserDateAudit {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @Column(name = "info")
     private String info;
 
